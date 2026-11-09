@@ -1,0 +1,20 @@
+.histoire{align-items:center;gap:50px}
+.suite{margin-top:14px;font-size:.95rem}
+.boutons{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;background:var(--carte)}
+.carte h3{font:600 1.15rem 'Outfit',sans-serif;margin:14px 0 8px}
+.carte p{font-size:.86rem}
+.citation{font:italic 600 1.2rem 'Playfair Display',serif!important;color:var(--vert)!important}
+.valeur h3{font-size:1rem}
+.valeur p{font-size:.78rem}
+.objectif{display:flex;gap:12px;align-items:flex-start;padding:18px 22px}
+.objectif mat-icon{color:var(--vert);flex:none}
+.objectif p{color:#dbe8e0;margin:0}
+.membre{text-align:center;padding:22px 16px}
+.avatar{width:64px;height:64px;margin:0 auto;border-radius:50%;background:#1d4a32;color:var(--vert);display:grid;place-items:center;font-weight:700}
+.membre h3{font-size:.95rem}
+.membre p{font-size:.72rem}
+.groupe{margin-bottom:28px}
+.groupe h3{font:600 1rem 'Outfit',sans-serif;color:var(--or);margin-bottom:12px}
+.noms{display:flex;flex-wrap:wrap;gap:10px}
+.noms span{background:var(--carte);border:1px solid var(--bord);border-radius:99px;padding:8px 16px;font-size:.82rem}

@@ -1,0 +1,62 @@
+.hero{min-height:640px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(3,22,13,.9) 0,rgba(3,22,13,.5) 70%),linear-gradient(0deg,var(--fond) 0,transparent 30%),url('/images/banniere.jpg') center/cover}
+.hero-contenu{position:relative;padding:60px 0}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);margin:22px 0 18px}
+.hero .intro{max-width:640px;font-size:1.02rem;color:#dbe8e0}
+.boutons{display:flex;gap:12px;margin:30px 0 40px;flex-wrap:wrap}
+.decouvrir{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--doux)}
+.hero-don{position:absolute;right:0;top:35%;padding:14px 24px}
+@media(max-width:900px){.hero-don{display:none}}
+
+.chiffres{background:var(--fond);padding:40px 0;margin-top:-20px}
+
+.apropos{align-items:center;gap:50px}
+.photo{position:relative}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:var(--carte)}
+.badge-annee{position:absolute;left:24px;bottom:24px;background:var(--or);color:#1b1503;border-radius:14px;padding:14px 22px;text-align:center}
+.badge-annee strong{display:block;font:700 2rem 'Outfit',sans-serif}
+.badge-annee small{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.apropos h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:16px}
+.engagement{margin-top:16px;padding:18px 22px}
+.engagement h3{display:flex;gap:8px;align-items:center;font:600 1rem 'Outfit',sans-serif;color:var(--vert);margin-bottom:6px}
+.engagement p{font-size:.85rem}
+.citation{font-style:italic;color:var(--vert)}
+
+.partenaire{text-align:center;padding:28px 20px}
+.partenaire .icone-rond{margin:0 auto 14px}
+.type{display:block;color:var(--or);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.partenaire h3{font:600 1.05rem 'Outfit',sans-serif;margin-bottom:8px}
+.partenaire p{font-size:.82rem}
+
+.action{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.visuel{height:200px;background:#0a2217 center/cover;position:relative}
+.visuel::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--carte),transparent 60%)}
+.badge{position:absolute;left:12px;top:12px;z-index:1;background:var(--vert);color:#04170e;font-size:.68rem;font-weight:700;border-radius:6px;padding:4px 10px}
+.corps{padding:0 20px 22px;display:flex;flex-direction:column;flex:1}
+.axe{color:var(--vert);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.action h3{font-size:1.2rem;margin:6px 0 10px}
+.action p{font-size:.82rem;flex:1}
+.savoir{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:var(--vert);font-size:.8rem;font-weight:600}
+
+.don{gap:60px;align-items:center}
+.don h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:16px}
+.garanties{margin-top:28px}
+.garanties h3{display:flex;gap:8px;align-items:center;font:600 .95rem 'Outfit',sans-serif;margin-bottom:6px}
+.garanties mat-icon{color:var(--vert)}
+.garanties p{font-size:.78rem}
+.formulaire-don{padding:32px;background:#0c2a1b}
+.formulaire-don h3{text-align:center;font-size:1.5rem;margin-bottom:4px}
+.montants{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 18px}
+.montants button{background:#0a2217;color:#fff;border:1px solid var(--bord);border-radius:10px;padding:12px;font:600 .95rem 'Outfit',sans-serif;cursor:pointer}
+.montants button.choisi{background:var(--or);color:#1b1503;border-color:var(--or)}
+.frequence{display:flex;justify-content:center;gap:24px;margin-bottom:18px;font-size:.85rem}
+.frequence input{accent-color:var(--vert);margin-right:6px}
+.moyens{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.moyens span{background:#0a2217;border-radius:6px;padding:5px 10px;font-size:.68rem;font-weight:600}
+.secure{margin-top:12px;font-size:.72rem}
+
+@media(max-width:700px){
+	.hero{min-height:min(640px,calc(100svh - 72px))}
+	.hero-contenu{padding:42px 0}
+	.boutons .btn{flex:1 1 auto}
+	.frequence{flex-wrap:wrap;gap:8px 18px}
+}

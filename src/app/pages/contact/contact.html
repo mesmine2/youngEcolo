@@ -1,0 +1,109 @@
+<!-- ===== Coordonnées ===== -->
+<section class="hero-page">
+  <div class="conteneur">
+    <p class="pastille"><span class="point"></span> Permanence terrain • Bassin du Congo</p>
+    <h1>Contactez Young Ecolo</h1>
+    <p class="intro">Une question, un partenariat, une envie de rejoindre l'action de terrain ? Notre équipe vous répond sous 48h.</p>
+    <div class="grille g4 infos">
+      @for (i of infos; track i.etiquette) {
+        <article class="carte info">
+          <span class="icone-rond"><mat-icon>{{ i.icone }}</mat-icon></span>
+          <small class="etiq">{{ i.etiquette }}</small>
+          <h3>{{ i.valeur }}</h3>
+          <p>{{ i.detail }}</p>
+          <small class="pied"><mat-icon>{{ i.pieicone }}</mat-icon> {{ i.pied }}</small>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Formulaire + pôles ===== -->
+<section class="section alt">
+  <div class="conteneur grille principal">
+    <form class="carte formulaire" (submit)="envoyer($event)">
+      <p class="etiquette">Formulaire sélectif</p>
+      <h2>Initier une collaboration ou un engagement</h2>
+      <p class="aide">Choisissez votre profil pour un traitement personnalisé par le pôle dédié.</p>
+
+      <p class="etiq">Je m'adresse à Young Ecolo en qualité de :</p>
+      <div class="profils">
+        @for (p of profils; track p.texte; let i = $index) {
+          <button type="button" [class.choisi]="profil() === i" (click)="profil.set(i)"><mat-icon>{{ p.icone }}</mat-icon> {{ p.texte }}</button>
+        }
+      </div>
+
+      <div class="deux">
+        <div class="champ"><label for="nom">Nom complet *</label><input id="nom" required placeholder="Ex. Diane Kouamé" /></div>
+        <div class="champ"><label for="org">Organisation / Institution</label><input id="org" placeholder="Entreprise, faculté, ou indépendant" /></div>
+        <div class="champ"><label for="mail">Adresse email officielle *</label><input id="mail" type="email" required placeholder="contact@domaine.org" /></div>
+        <div class="champ"><label for="tel">Numéro WhatsApp / ligne directe *</label><input id="tel" required placeholder="+237 6XX XX XX XX" /></div>
+      </div>
+      <div class="champ"><label for="objet">Objet du message *</label><input id="objet" required placeholder="Précisez la thématique (ex: Reforestation périurbaine, Recyclage école)" /></div>
+      <div class="champ"><label for="message">Message détaillé *</label><textarea id="message" required placeholder="Décrivez brièvement vos attentes, calendrier envisagé ou questions..."></textarea></div>
+
+      <div class="bas">
+        <small><mat-icon>verified_user</mat-icon> Données protégées • Réponse sous 48h</small>
+        <button class="btn btn-vert">Transmettre ma requête <mat-icon>send</mat-icon></button>
+      </div>
+      @if (envoye()) {
+        <p class="merci">Merci ! Votre message a bien été transmis à l'équipe.</p>
+      }
+    </form>
+
+    <div class="droite">
+      <section class="carte reseau">
+        <p class="etiquette or">Réseau terrain Afrique centrale</p>
+        <h3>4 Pôles d'ancrage régionaux</h3>
+        <p class="aide">Déploiement coordonné des pépinières communautaires et des hubs d'éco-sensibilisation.</p>
+        <div class="carte-poles">
+          <p class="pastille"><span class="point"></span> Bassin du Congo • Hubs opérationnels</p>
+          <div class="grille g2">
+            @for (p of poles; track p.nom; let i = $index) {
+              <div class="pole"><span class="num">{{ i + 1 }}</span><div><b>{{ p.nom }}</b><small>{{ p.role }}</small></div></div>
+            }
+          </div>
+        </div>
+        <div class="antenne">
+          <mat-icon>handshake</mat-icon>
+          <div><b>Envie d'ouvrir une antenne locale ?</b><small>Rejoignez le réseau des ambassadeurs climat en Afrique.</small></div>
+          <a class="btn btn-sombre" href="#">En savoir plus</a>
+        </div>
+      </section>
+
+      <section class="carte garantie">
+        <p class="etiquette or">Engagement d'équipe</p>
+        <h3>Garantie de transparence &amp; réactivité</h3>
+        <p>Toutes les propositions de partenariats techniques, académiques ou financiers sont étudiées par notre comité de pilotage dans un souci d'intégrité environnementale et de bénéfice direct pour les communautés riveraines.</p>
+        <div class="verifs"><span><mat-icon>check_circle</mat-icon> Audit indépendant</span><span><mat-icon>check_circle</mat-icon> Rapports ouverts</span></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="conteneur">
+    <div class="entete-faq">
+      <app-titre-section etiquette="Foire aux questions" titre="Questions fréquentes et participation citoyenne" soustitre="Tout ce qu'il faut savoir pour interagir avec Young Ecolo et rejoindre nos chantiers de reforestation." [centre]="false" />
+      <p class="aide">Besoin d'une réponse spécifique ? <a href="#" class="lien">Écrire à l'équipe</a></p>
+    </div>
+    <div class="grille g2">
+      @for (f of questions; track f.q) {
+        <article class="carte faq">
+          <h3><span class="rond">?</span> {{ f.q }}</h3>
+          <p>{{ f.r }}</p>
+        </article>
+      }
+    </div>
+
+    <div class="carte urgence">
+      <div>
+        <p class="etiquette or">Liaison directe WhatsApp</p>
+        <h3>Besoin d'une réponse instantanée pour une urgence écologique ?</h3>
+        <p>Nos équipes d'intervention rapide peuvent être jointes directement sur le canal WhatsApp au +237 694 57 90 03.</p>
+      </div>
+      <a class="btn btn-vert" href="https://wa.me/237694579003" target="_blank"><mat-icon>chat</mat-icon> Ouvrir la conversation</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<div class="bloc" [class.centre]="centre()">
+  @if (etiquette()) {
+    <p class="etiquette" [class.or]="or()">{{ etiquette() }}</p>
+  }
+  <h2>{{ titre() }}</h2>
+  @if (soustitre()) {
+    <p class="sous">{{ soustitre() }}</p>
+  }
+</div>

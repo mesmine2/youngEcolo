@@ -1,0 +1,35 @@
+<section class="hero-page">
+  <div class="conteneur">
+    <p class="pastille"><span class="point"></span> Projets &amp; Actions</p>
+    <h1>Des actions concrètes, du Wouri au <em>Bassin du Congo</em></h1>
+    <p class="intro">Reboisement, dépollution, énergie solaire, emplois verts, éducation : découvrez les projets que Young Ecolo mène avec ses partenaires pour faire de la jeunesse un acteur du changement climatique.</p>
+  </div>
+</section>
+
+@for (p of projets; track p.id; let pair = $even) {
+  <section class="section" [class.alt]="!pair" [id]="p.id">
+    <div class="conteneur grille g2 projet" [class.inverse]="!pair">
+      <div class="photo"><img [src]="p.image" [alt]="p.titre" /></div>
+      <div>
+        <p class="etiquette"><mat-icon>{{ p.icone }}</mat-icon> {{ p.categorie }}</p>
+        <h2>{{ p.titre }}</h2>
+        <p>{{ p.texte }}</p>
+        <ul class="puces">
+          @for (pt of p.points; track pt) { <li><mat-icon>check_circle</mat-icon> {{ pt }}</li> }
+        </ul>
+      </div>
+    </div>
+  </section>
+}
+
+<section class="section">
+  <div class="conteneur">
+    <div class="carte appel">
+      <div>
+        <h2>Vous voulez soutenir ou lancer un projet avec nous ?</h2>
+        <p>Écoles, entreprises, collectivités ou bénévoles : écrivez-nous, nous vous répondons sous 48 h.</p>
+      </div>
+      <a routerLink="/contact" class="btn btn-or">Nous contacter</a>
+    </div>
+  </div>
+</section>

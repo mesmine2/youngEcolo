@@ -1,0 +1,131 @@
+<!-- ===== En-tête ===== -->
+<section class="hero-page">
+  <div class="conteneur">
+    <div class="titre-haut">
+      <div>
+        <p class="pastille"><span class="point"></span> Nos domaines d'intervention</p>
+        <h1>Nos Domaines d'Intervention <em>Stratégiques</em></h1>
+      </div>
+      <div class="resume">
+        <p>Nos actions s'articulent autour de la protection de la biodiversité, de l'éducation environnementale et de solutions durables adaptées aux réalités locales.</p>
+        <small><span><mat-icon>check_circle</mat-icon> Validé scientifique</span> <span><mat-icon>settings_suggest</mat-icon> Déploiement hybride</span></small>
+      </div>
+    </div>
+    <div class="grille g4">
+      @for (s of stats; track s.libelle; let i = $index) {
+        <app-statistique [valeur]="s.valeur" [libelle]="s.libelle" [detail]="s.detail" [couleur]="i === 1 ? 'or' : 'vert'" />
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 piliers ===== -->
+<section class="section alt">
+  <div class="conteneur">
+    <div class="entete-bloc">
+      <app-titre-section etiquette="Architecture d'impact" titre="Les 3 Piliers Fondateurs de Young Ecolo" soustitre="Chaque pilier articule un protocole d'intervention documenté, monitoré et réplicable à l'échelle des départements du Cameroun et du Bassin du Congo." [centre]="false" />
+      <small class="directives"><span class="point"></span> Directives opérationnelles ONGs 2025-2028</small>
+    </div>
+
+    <div class="grille g2">
+      <article class="carte pilier">
+        <div class="image" style="background-image:url(images/pilier-education.jpg)"><span class="num">Pilier 01</span></div>
+        <div class="texte">
+          <h3>Éducation et Formation Verte des Générations Futures</h3>
+          <p>L'enracinement de la conscience environnementale dès les cycles primaires pour forger une nouvelle citoyenneté écologique africaine, capable d'analyser son milieu et de protéger les écosystèmes forestiers critiques.</p>
+          <div class="grille g2 sous">
+            <div class="carte"><h4><mat-icon>school</mat-icon> Écoles Primaires & Collèges</h4><p>Sensibilisation interactive, clubs écolos scolaires et création de potagers pédagogiques biologiques.</p></div>
+            <div class="carte"><h4><mat-icon>workspace_premium</mat-icon> Masterclasses Leadership</h4><p>Modules certifiants en plaidoyer climatique, droit environnemental et négociation internationale.</p></div>
+          </div>
+          <p class="objectif"><mat-icon>groups</mat-icon> Objectif : 2 000 élèves & jeunes mentors ciblés <small>Programme académique actif</small></p>
+        </div>
+      </article>
+
+      <article class="carte pilier">
+        <div class="image" style="background-image:url(images/pilier-energie.jpg)"><span class="num">Pilier 02</span></div>
+        <div class="texte">
+          <h3>Technologies des Énergies Renouvelables</h3>
+          <p>Rompre la dépendance aux combustibles fossiles et aux générateurs polluants grâce au déploiement de micro-réseaux photovoltaïques autonomes et à la démocratisation des savoirs techniques.</p>
+          <div class="carte sous"><h4><mat-icon>solar_power</mat-icon> Kits Photovoltaïques Décentralisés</h4><p>Électrification de dispensaires de santé, écoles rurales isolées et centres de conservation communautaires.</p></div>
+          <div class="carte sous"><h4><mat-icon>engineering</mat-icon> Formations Gratuites & Emplois Verts</h4><p>Apprentissage pratique de l'installation, du dimensionnement technique et de la maintenance préventive.</p></div>
+          <p class="objectif"><mat-icon>bolt</mat-icon> Rendement > 98% en milieu isolé <small>Filière certifiée</small></p>
+        </div>
+      </article>
+    </div>
+
+    <article class="carte pilier horizontal">
+      <div class="image" style="background-image:url(images/pilier-odd.jpg)"><span class="num">Pilier 03</span></div>
+      <div class="texte">
+        <p class="etiquette">Gouvernance mondiale & rigueur</p>
+        <h3>Développement Durable, Résilience Climatique et Trajectoire ODD</h3>
+        <p>L'écologie n'est pas une thématique isolée : elle est la colonne vertébrale du développement humain en Afrique subsaharienne. Young Ecolo calibre toutes ses interventions sur les cadres de performance des Nations Unies (Agenda 2030) afin de produire des résultats auditables, durables et alignés sur les exigences de la finance verte internationale.</p>
+        <div class="chips">
+          @for (o of oddPilier; track o.n) { <span><b>{{ o.n }}</b>{{ o.t }}</span> }
+        </div>
+        <ul class="puces">
+          <li><mat-icon>verified_user</mat-icon> Conforme aux Plans Nationaux d'Adaptation (PNA Cameroun)</li>
+          <li><mat-icon>trending_up</mat-icon> Suivi trimestriel d'impact certifié</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Matrice ODD ===== -->
+<section class="section">
+  <div class="conteneur">
+    <app-titre-section etiquette="Alignement institutionnel & métriques" titre="Matrice d'Alignement aux Objectifs de Développement Durable" soustitre="Explorez comment chacune de nos opérations de terrain répond aux cibles spécifiques des Nations Unies avec des indicateurs de performance clés (KPI) précis." [centre]="false" />
+    <div class="grille g3">
+      @for (o of odd; track o.n) {
+        <article class="carte matrice">
+          <div class="ligne"><span class="chiffre">{{ o.n }}</span><small>{{ o.tag }}</small></div>
+          <h3>{{ o.titre }}</h3>
+          <p>{{ o.texte }}</p>
+          <small class="kpi">Indicateur clé : <b>{{ o.indicateur }}</b></small>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Méthodologies ===== -->
+<section class="section alt">
+  <div class="conteneur">
+    <app-titre-section etiquette="Notre modèle opératoire" titre="Méthodologies Appliquées et Ingénierie Terrain" soustitre="Comment nous opérons concrètement pour transformer un enjeu global en impact local mesurable, résilient et immédiatement appropriable par les populations." [centre]="false" />
+    <div class="grille g3">
+      @for (m of methodes; track m.titre) {
+        <article class="carte methode">
+          <span class="icone-rond"><mat-icon>{{ m.icone }}</mat-icon></span>
+          <small class="axe">{{ m.axe }}</small>
+          <h3>{{ m.titre }}</h3>
+          <p>{{ m.texte }}</p>
+          <ul class="puces">
+            @for (p of m.points; track p) { <li><mat-icon>check_circle</mat-icon> {{ p }}</li> }
+          </ul>
+          <div class="mesure"><small>{{ m.mesure }}</small><b>{{ m.valeur }}</b></div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Appel à partenariat ===== -->
+<section class="section">
+  <div class="conteneur">
+    <div class="carte appel">
+      <div>
+        <p class="pastille">Collectivités territoriales • Ministères • Bailleurs</p>
+        <h2>Co-déployons des Programmes d'Action Écologique dans Vos Territoires</h2>
+        <p>Mairies, communautés urbaines, agences de coopération internationale et fondations privées : faites alliance avec l'expertise de terrain et l'énergie mobilisatrice de Young Ecolo. Nos équipes techniques conçoivent, exécutent et monitoreront vos projets d'électrification solaire, de restauration forestière et plaidoyer climatique, d'éducation verte et de valorisation des déchets.</p>
+        <p class="garanties"><span><mat-icon>check_circle</mat-icon> Audit territorial préalable</span> <span><mat-icon>check_circle</mat-icon> Rapports conformes ODD & ESG</span> <span><mat-icon>check_circle</mat-icon> Couverture nationale Cameroun</span></p>
+      </div>
+      <div class="carte panneau">
+        <h3>Initier un Partenariat</h3>
+        <p>Prenez contact directement avec notre direction des programmes stratégiques.</p>
+        <a routerLink="/contact" class="btn btn-or btn-large">Solliciter une Réunion Technique <mat-icon>arrow_forward</mat-icon></a>
+        <a routerLink="/projets" class="btn btn-sombre btn-large">Consulter les Projets en Cours</a>
+        <small>Réponse institutionnelle garantie sous 48h</small>
+      </div>
+    </div>
+  </div>
+</section>

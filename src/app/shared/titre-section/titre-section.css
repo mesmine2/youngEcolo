@@ -1,0 +1,4 @@
+.bloc{margin-bottom:44px}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+.sous{max-width:640px;margin-top:12px}
+.centre .sous{margin-inline:auto}

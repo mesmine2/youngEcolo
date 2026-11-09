@@ -1,0 +1,17 @@
+<header class="entete">
+  <div class="conteneur barre">
+    <a routerLink="/" class="logo"><img src="images/logo.png" alt="Young Ecolo" /></a>
+
+    <button class="burger" (click)="ouvert.set(!ouvert())" aria-label="Ouvrir le menu">
+      <mat-icon>{{ ouvert() ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <nav [class.ouvert]="ouvert()" (click)="ouvert.set(false)">
+      @for (lien of liens; track lien.chemin) {
+        <a [routerLink]="lien.chemin" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">{{ lien.nom }}</a>
+      }
+      <a routerLink="/communaute" fragment="candidature" class="btn btn-sombre premier">Devenir bénévole</a>
+      <a routerLink="/" fragment="don" class="btn btn-or">Faire un don</a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,7 @@
+<div class="stat carte">
+  <strong [class.or]="couleur() === 'or'">{{ valeur() }}</strong>
+  <span class="libelle">{{ libelle() }}</span>
+  @if (detail()) {
+    <small>{{ detail() }}</small>
+  }
+</div>

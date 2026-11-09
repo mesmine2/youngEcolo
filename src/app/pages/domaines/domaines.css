@@ -1,0 +1,62 @@
+.titre-haut{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
+.titre-haut h1{max-width:560px}
+.resume{max-width:360px;font-size:.88rem}
+.resume small{display:flex;gap:16px;margin-top:10px;color:var(--vert);font-size:.74rem}
+.resume mat-icon{font-size:16px;width:16px;height:16px;vertical-align:-3px}
+
+.entete-bloc{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.directives{display:flex;gap:8px;align-items:center;color:var(--vert);font-size:.74rem;margin-bottom:44px}
+
+.pilier{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.image{min-height:230px;background:#0a2217 center/cover;position:relative}
+.image::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--carte),transparent 70%)}
+.num{position:absolute;left:14px;top:14px;z-index:1;background:rgba(6,32,20,.85);color:var(--or);font-size:.68rem;font-weight:600;border-radius:6px;padding:4px 10px}
+.texte{padding:8px 28px 28px}
+.pilier h3{font-size:1.5rem;margin-bottom:10px}
+.pilier .texte > p{font-size:.88rem}
+.sous{margin-top:14px;padding:16px;background:#0a2217}
+.sous h4{display:flex;gap:8px;align-items:center;font:600 .92rem 'Outfit',sans-serif;margin-bottom:4px}
+.sous mat-icon{color:var(--or)}
+.sous p{font-size:.78rem}
+.objectif{display:flex;gap:8px;align-items:center;margin-top:18px;font-size:.8rem;color:var(--or)!important;flex-wrap:wrap}
+.objectif small{margin-left:auto;color:var(--doux)}
+.horizontal{flex-direction:row;margin-top:24px}
+.horizontal .image{flex:0 0 36%;min-height:320px}
+.horizontal .image::after{background:linear-gradient(90deg,transparent 50%,var(--carte))}
+.horizontal .texte{padding:28px}
+@media(max-width:900px){.horizontal{flex-direction:column}.horizontal .image{min-height:220px}}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.chips span{background:#0a2217;border:1px solid var(--bord);border-radius:8px;padding:8px 12px;font-size:.68rem;color:var(--doux);text-align:center}
+.chips b{display:block;color:var(--vert);font-size:.8rem}
+
+.matrice .ligne{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.chiffre{color:var(--vert);font:700 1.1rem 'Outfit',sans-serif}
+.ligne small{background:rgba(52,226,160,.12);color:var(--vert);border-radius:6px;padding:3px 10px;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.matrice h3{font-size:1.2rem;margin-bottom:10px}
+.matrice p{font-size:.82rem}
+.kpi{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--bord);color:var(--doux);font-size:.72rem}
+.kpi b{color:var(--or)}
+
+.methode .icone-rond{margin-bottom:14px}
+.axe{color:var(--vert);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.methode h3{font-size:1.3rem;margin:4px 0 10px}
+.methode p{font-size:.84rem}
+.mesure{display:flex;justify-content:space-between;gap:10px;margin-top:18px;padding-top:14px;border-top:1px solid var(--bord);font-size:.74rem}
+.mesure small{color:var(--doux)}
+.mesure b{color:var(--vert)}
+
+.appel{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;padding:44px;align-items:center;background:#0c2a1b}
+@media(max-width:900px){.appel{grid-template-columns:1fr}}
+.appel h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:16px 0}
+.appel .garanties{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:.76rem;color:var(--vert)}
+.appel .garanties mat-icon{font-size:16px;width:16px;height:16px;vertical-align:-3px}
+.panneau{background:#0a2217}
+.panneau h3{font:600 1.05rem 'Outfit',sans-serif;margin-bottom:6px}
+.panneau p{font-size:.8rem;margin-bottom:16px}
+.panneau .btn{margin-bottom:10px}
+.panneau small{display:block;text-align:center;color:var(--doux);margin-top:8px;font-size:.7rem}
+
+@media(max-width:700px){
+	.appel{padding:24px}
+	.horizontal .texte{padding:20px}
+}

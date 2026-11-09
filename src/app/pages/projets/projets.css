@@ -1,0 +1,13 @@
+.projet{align-items:center;gap:50px}
+.projet.inverse .photo{order:2}
+@media(max-width:700px){.projet.inverse .photo{order:0}}
+.photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;background:var(--carte)}
+.etiquette{display:flex;align-items:center;gap:8px}
+.etiquette mat-icon{font-size:18px;width:18px;height:18px}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px}
+.appel{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:40px;background:#0c2a1b}
+.appel h2{margin-bottom:6px}
+
+@media(max-width:700px){
+	.appel{padding:24px}
+}

@@ -1,0 +1,80 @@
+.haut{align-items:center;gap:50px}
+.cohorte{color:var(--doux);font-weight:400;text-transform:none;letter-spacing:0}
+.boutons{display:flex;gap:12px;margin:26px 0;flex-wrap:wrap}
+.garanties{display:flex;gap:24px;flex-wrap:wrap;font-size:.78rem}
+.garanties span{display:flex;gap:6px;align-items:center}
+.garanties mat-icon{color:var(--vert);font-size:16px;width:16px;height:16px}
+
+.vitrine{position:relative;border-radius:18px;overflow:hidden;background:var(--carte)}
+.vitrine img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.legende{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(6,32,20,.88);backdrop-filter:blur(6px);border-radius:12px;padding:14px 16px;font-size:.82rem}
+.legende small{color:var(--vert);font-size:.68rem;font-weight:600}
+.legende p{color:#fff;margin:4px 0}
+.legende h3{font-size:1.05rem;margin:4px 0}
+.legende .btn{margin-top:8px}
+.comite{display:block;color:var(--doux)!important}
+.poles-badge{position:absolute;left:16px;bottom:-14px;display:flex;align-items:center;gap:10px;background:var(--carte);border-radius:12px;padding:10px 14px;font-size:.75rem}
+
+.entete-bloc{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.entete-bloc .note{max-width:380px;font-size:.82rem;margin-bottom:44px}
+
+.ligne{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.ligne small{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--doux);font-weight:600}
+.ligne mat-icon{color:var(--vert)}
+.chiffre strong{display:block;font:700 2.4rem 'Outfit',sans-serif}
+.chiffre h3{font:600 1rem 'Outfit',sans-serif;margin:4px 0 8px}
+.chiffre p{font-size:.75rem}
+.croissance{display:flex;align-items:center;gap:18px;margin-top:20px;padding:16px 22px;flex-wrap:wrap}
+.croissance .texte{flex:1;min-width:240px}
+.croissance p{font-size:.8rem}
+.jauge{min-width:260px;font-size:.72rem}
+.jauge small{display:flex;justify-content:space-between;color:var(--doux)}
+.jauge b{color:var(--vert)}
+.barre{height:6px;background:#0a2217;border-radius:6px;margin-top:6px;overflow:hidden}
+.barre span{display:block;height:100%;background:var(--vert)}
+
+.canal{display:flex;flex-direction:column}
+.canal h3{font-size:1.2rem;margin-bottom:10px}
+.canal p{font-size:.84rem;flex:1}
+.mise{display:flex;gap:6px;align-items:center;color:var(--vert);margin:16px 0;font-size:.74rem;font-weight:500}
+.mise mat-icon{font-size:16px;width:16px;height:16px}
+.canal .btn{margin-top:auto}
+.local{background:linear-gradient(160deg,#1a3a25,var(--carte))}
+.tag-or{background:rgba(211,160,33,.2);color:var(--or)!important;padding:3px 10px;border-radius:6px}
+
+.delegues{align-items:center;gap:50px}
+.delegues h2{font-size:clamp(1.8rem,3.2vw,2.4rem);margin-bottom:14px}
+.pole{display:flex;gap:14px;margin-top:14px;padding:16px 20px}
+.pole h3{font:600 1rem 'Outfit',sans-serif;margin-bottom:2px}
+.pole p{font-size:.8rem}
+
+.temoignage{display:flex;flex-direction:column;gap:18px}
+.etoiles mat-icon{color:var(--or);font-size:16px;width:16px;height:16px}
+.temoignage .texte{flex:1;font-size:.88rem;color:#dbe8e0}
+.auteur{display:flex;gap:12px;align-items:center}
+.auteur b{display:block;font-size:.9rem}
+.auteur small{color:var(--vert);font-size:.68rem}
+.avatar{width:42px;height:42px;border-radius:50%;background:#1d4a32;color:var(--vert);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+
+.candidature{max-width:780px;margin:0 auto;padding:44px}
+.candidature h2{font-size:clamp(1.7rem,3vw,2.2rem);margin:8px 0 10px}
+.candidature > p.centre{margin-bottom:28px;font-size:.88rem}
+.choix{gap:12px}
+.option{display:flex;gap:10px;align-items:center;background:#0a2217;border:1px solid var(--bord);border-radius:10px;padding:12px;cursor:pointer;text-transform:none;letter-spacing:0}
+.option input{accent-color:var(--vert);width:auto}
+.option b{display:block;font-size:.85rem;color:#fff}
+.option small{font-size:.68rem;color:var(--vert)}
+.charte{display:flex;gap:10px;font-size:.78rem;color:var(--doux);margin:8px 0 18px}
+.charte input{accent-color:var(--vert);margin-top:4px}
+
+.faq{max-width:780px}
+.question{padding:0;margin-bottom:12px}
+.question button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:none;border:0;color:#fff;font:500 .95rem 'Outfit',sans-serif;padding:20px 24px;cursor:pointer;text-align:left}
+.question p{padding:0 24px 20px;font-size:.88rem}
+
+@media(max-width:700px){
+	.jauge{min-width:0;width:100%}
+	.candidature{padding:24px}
+	.question button{padding:18px 16px}
+	.question p{padding:0 16px 18px}
+}

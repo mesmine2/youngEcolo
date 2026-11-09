@@ -1,0 +1,131 @@
+<!-- ===== Bannière ===== -->
+<section class="hero">
+  <div class="conteneur hero-contenu">
+    <p class="pastille"><span class="point"></span> Organisation environnementale • Douala, Cameroun • Afrique centrale</p>
+    <h1>
+      Protéger la nature.<br />
+      Mobiliser les jeunes.<br />
+      <em>Bâtir un avenir durable.</em>
+    </h1>
+    <p class="intro">Depuis 2023, Young Ecolo mobilise la jeunesse et les communautés autour du développement durable, de l'éducation environnementale et des solutions écologiques, au Cameroun et en Afrique centrale.</p>
+    <div class="boutons">
+      <a routerLink="/" fragment="don" class="btn btn-or">Faire un don</a>
+      <a routerLink="/communaute" fragment="candidature" class="btn btn-sombre">Devenir Bénévole</a>
+    </div>
+    <a routerLink="/projets" class="decouvrir">Découvrir nos actions <mat-icon>arrow_downward</mat-icon></a>
+    <a routerLink="/" fragment="don" class="btn btn-contour hero-don"><mat-icon>favorite_border</mat-icon> Faites un Don</a>
+  </div>
+</section>
+
+<!-- ===== Chiffres ===== -->
+<section class="chiffres">
+  <div class="conteneur grille g5">
+    @for (s of stats; track s.libelle) {
+      <app-statistique [valeur]="s.valeur" [libelle]="s.libelle" [couleur]="$odd ? 'or' : 'vert'" />
+    }
+  </div>
+</section>
+
+<!-- ===== À propos ===== -->
+<section class="section alt">
+  <div class="conteneur grille g2 apropos">
+    <div class="photo">
+      <img src="images/a-propos.jpg" alt="Bénévoles de Young Ecolo en plantation" />
+      <div class="badge-annee">
+        <small>Organisation créée en</small>
+        <strong>2023</strong>
+        <small>par Eitel MBANGO</small>
+      </div>
+    </div>
+    <div>
+      <p class="etiquette">À propos de Young Ecolo</p>
+      <h2>Un mouvement citoyen pour une écologie inclusive et participative en Afrique.</h2>
+      <p class="intro">Young Ecolo mobilise les jeunes et les communautés au Cameroun autour de la protection de l'environnement, de l'éducation écologique et du développement durable.</p>
+      @for (e of engagements; track e.titre) {
+        <article class="carte engagement">
+          <h3><mat-icon>{{ e.icone }}</mat-icon> {{ e.titre }}</h3>
+          <p [class.citation]="$last">{{ e.texte }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Partenaires ===== -->
+<section class="section" id="partenaires">
+  <div class="conteneur">
+    <app-titre-section etiquette="Nos partenaires" titre="Ensemble, construisons des partenariats durables." soustitre="Nous encourageons les collaborations qui soutiennent la protection de l'environnement et le développement durable." />
+    <div class="grille g5">
+      @for (p of partenaires; track p.nom) {
+        <article class="carte partenaire">
+          <span class="icone-rond"><mat-icon>{{ p.icone }}</mat-icon></span>
+          <small class="type">{{ p.type }}</small>
+          <h3>{{ p.nom }}</h3>
+          <p>{{ p.texte }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Actions prioritaires ===== -->
+<section class="section alt">
+  <div class="conteneur">
+    <app-titre-section etiquette="Actions prioritaires" titre="Nos programmes stratégiques sur le terrain" soustitre="De la restauration des mangroves à l'innovation numérique pour le climat, découvrez nos axes d'intervention." />
+    <div class="grille g4">
+      @for (a of actions; track a.titre) {
+        <article class="carte action">
+          <div class="visuel" [style.background-image]="'url(' + a.image + ')'">
+            <span class="badge">{{ a.badge }}</span>
+          </div>
+          <div class="corps">
+            <small class="axe">{{ a.axe }}</small>
+            <h3>{{ a.titre }}</h3>
+            <p>{{ a.texte }}</p>
+            <a routerLink="/projets" class="savoir">En savoir plus <mat-icon>arrow_forward</mat-icon></a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Don ===== -->
+<section class="section" id="don">
+  <div class="conteneur grille g2 don">
+    <div>
+      <p class="etiquette or">Soutenir Young Ecolo</p>
+      <h2>Votre don finance directement nos actions sur le terrain.</h2>
+      <p class="intro">Chaque contribution, quelle que soit son importance, participe activement à la restauration des forêts, au ramassage des déchets et à l'équipement des jeunes leaders environnementaux en Afrique centrale.</p>
+      <div class="grille g2 garanties">
+        <div class="carte"><h3><mat-icon>verified_user</mat-icon> 100% Transparent</h3><p>Rapports d'impact et audits financiers publiés annuellement.</p></div>
+        <div class="carte"><h3><mat-icon>eco</mat-icon> Impact Local Direct</h3><p>85% des ressources allouées directement aux opérations de terrain.</p></div>
+      </div>
+    </div>
+
+    <form class="carte formulaire-don" (submit)="$event.preventDefault()">
+      <h3>Faire un don</h3>
+      <p class="centre">Sélectionnez ou saisissez votre contribution</p>
+      <div class="montants">
+        @for (m of montants; track m.valeur) {
+          <button type="button" [class.choisi]="montant() === m.valeur" (click)="montant.set(m.valeur)">{{ m.texte }}</button>
+        }
+      </div>
+      <div class="champ">
+        <label for="montant">Montant libre (FCFA)</label>
+        <input id="montant" type="number" min="0" [value]="montant()" (input)="saisirMontant($event)" />
+      </div>
+      <div class="frequence">
+        <label><input type="radio" name="frequence" checked (change)="frequence.set('ponctuel')" /> Don ponctuel</label>
+        <label><input type="radio" name="frequence" (change)="frequence.set('mensuel')" /> Don mensuel</label>
+      </div>
+      <div class="moyens">
+        @for (m of moyens; track m) {
+          <span>{{ m }}</span>
+        }
+      </div>
+      <button class="btn btn-or btn-large"><mat-icon>lock</mat-icon> Donner maintenant</button>
+      <p class="centre secure"><mat-icon>verified_user</mat-icon> Paiement 100% sécurisé</p>
+    </form>
+  </div>
+</section>

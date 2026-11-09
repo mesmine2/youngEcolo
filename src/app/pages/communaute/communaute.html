@@ -1,0 +1,174 @@
+<!-- ===== En-tête ===== -->
+<section class="hero-page">
+  <div class="conteneur grille g2 haut">
+    <div>
+      <p class="pastille"><span class="point"></span> Réseau régional actif • Afrique centrale <span class="cohorte">/ Cohorte 2025</span></p>
+      <h1>Notre Communauté <em>Engagée</em></h1>
+      <p class="intro">Plus de 14 000 membres et sympathisants connectés à travers l'Afrique centrale pour faire bouger les lignes. De Douala à Kinshasa, nous formons une force citoyenne qui restaure les écosystèmes et bâtit l'économie verte de demain.</p>
+      <div class="boutons">
+        <a routerLink="/communaute" fragment="candidature" class="btn btn-or">Rejoindre la cohorte 2025 <mat-icon>arrow_downward</mat-icon></a>
+        <a routerLink="/communaute" fragment="canaux" class="btn btn-sombre">Explorer les canaux <mat-icon>forum</mat-icon></a>
+      </div>
+      <p class="garanties"><span><mat-icon>check_circle</mat-icon> 100% gouvernance jeune &amp; inclusif</span> <span><mat-icon>public</mat-icon> Bassin du Congo &amp; villes côtières</span></p>
+    </div>
+    <div class="vitrine">
+      <img src="images/communaute-hero.jpg" alt="Bénévoles en gilets orange dans la forêt" />
+      <div class="legende">
+        <small>Mobilisation en direct <b>• 14k+ connectés</b></small>
+        <p>« Notre voix porte désormais dans les décisions climatiques locales et régionales. »</p>
+        <small class="comite">Comité régional de jeunesse • Bassin du Congo</small>
+      </div>
+      <div class="poles-badge"><mat-icon>park</mat-icon> <span><b>3 Pôles Clés</b><br />Douala • Yaoundé • Limbé</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Rayonnement ===== -->
+<section class="section alt">
+  <div class="conteneur">
+    <div class="entete-bloc">
+      <app-titre-section etiquette="Données certifiées d'impact" titre="Rayonnement & Portée Réelle" [centre]="false" />
+      <p class="note">Extraits consolidés du rapport d'impact institutionnel de Young Ecolo. Une présence numérique robuste couplée à une dynamique de terrain constante.</p>
+    </div>
+    <div class="grille g5">
+      @for (c of chiffres; track c.titre) {
+        <article class="carte chiffre">
+          <div class="ligne"><mat-icon>{{ c.icone }}</mat-icon><small>{{ c.canal }}</small></div>
+          <strong>{{ c.valeur }}</strong>
+          <h3>{{ c.titre }}</h3>
+          <p>{{ c.texte }}</p>
+        </article>
+      }
+    </div>
+    <div class="carte croissance">
+      <span class="icone-rond"><mat-icon>trending_up</mat-icon></span>
+      <div class="texte"><b>Dynamique de Croissance 2024-2025</b><p>Taux d'engagement organique moyen supérieur à 18.4% sur l'ensemble de nos canaux.</p></div>
+      <div class="jauge"><small>Objectif Cohorte : 20 000 jeunes <b>72%</b></small><div class="barre"><span style="width:72%"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Canaux ===== -->
+<section class="section" id="canaux">
+  <div class="conteneur">
+    <app-titre-section etiquette="Espaces d'action citoyenne" titre="Nos Canaux Officiels d'Impact" soustitre="Choisissez vos points d'ancrage pour recevoir nos appels d'action, participer aux consultations citoyennes et échanger avec les éco-leaders de terrain." />
+    <div class="grille g3">
+      @for (c of canaux; track c.titre) {
+        <article class="carte canal">
+          <div class="ligne"><span class="icone-rond"><mat-icon>{{ c.icone }}</mat-icon></span><small>{{ c.type }}</small></div>
+          <h3>{{ c.titre }}</h3>
+          <p>{{ c.texte }}</p>
+          <small class="mise"><mat-icon>bolt</mat-icon> {{ c.note }}</small>
+          <a [href]="c.lien" target="_blank" class="btn btn-large" [class.btn-vert]="c.plein" [class.btn-sombre]="!c.plein">{{ c.bouton }}</a>
+        </article>
+      }
+      <article class="carte canal local">
+        <div class="ligne"><small class="tag-or">Action physique</small><small>Présence urbaine</small></div>
+        <h3>Comités de Quartiers</h3>
+        <p>Vous préférez le terrain immédiat ? Nos comités citoyens opèrent à Douala (Akwa, Bonabéri, Bepanda), Yaoundé (Mokolo, Ngoa-Ekélé) et Limbé (Down Beach).</p>
+        <a routerLink="/contact" class="btn btn-or btn-large">Trouver mon comité local</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Éco-délégués ===== -->
+<section class="section alt">
+  <div class="conteneur grille g2 delegues">
+    <div>
+      <p class="etiquette">Déploiement territorial</p>
+      <h2>Programme des Éco-Délégués &amp; Ambassadeurs</h2>
+      <p class="intro">Pour que la transition écologique soit réelle, elle doit être incarnée là où vivent les populations. Nos ambassadeurs locaux identifient les dépotoirs sauvages, organisent la collecte sélective avec WasteConnect et installent les solutions d'énergie EcoSolar.</p>
+      @for (p of poles; track p.titre) {
+        <article class="carte pole">
+          <span class="icone-rond"><mat-icon>{{ p.icone }}</mat-icon></span>
+          <div><h3>{{ p.titre }}</h3><p>{{ p.texte }}</p></div>
+        </article>
+      }
+    </div>
+    <div class="vitrine">
+      <img src="images/ambassadeurs.jpg" alt="Équipe d'ambassadeurs autour d'une carte" />
+      <div class="legende">
+        <small>Recrutement de terrain</small>
+        <h3>45 nouveaux ambassadeurs recherchés</h3>
+        <p>Pour encadrer les campagnes trimestrielles de salubrité citoyenne.</p>
+        <a routerLink="/communaute" fragment="candidature" class="btn btn-vert">Postuler au rôle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Témoignages ===== -->
+<section class="section">
+  <div class="conteneur">
+    <div class="entete-bloc">
+      <app-titre-section etiquette="Voix de la jeunesse" titre="Ils Transforment Leurs Villes" [centre]="false" />
+      <p class="note">Découvrez comment l'engagement bénévole au sein de Young Ecolo débouche sur de vrais parcours d'entrepreneuriat vert et de leadership civique.</p>
+    </div>
+    <div class="grille g3">
+      @for (t of temoignages; track t.nom) {
+        <article class="carte temoignage">
+          <div class="etoiles">
+            @for (i of [1, 2, 3, 4, 5]; track i) { <mat-icon>star</mat-icon> }
+          </div>
+          <p class="texte">{{ t.texte }}</p>
+          <div class="auteur">
+            <span class="avatar">{{ t.initiales }}</span>
+            <div><b>{{ t.nom }}</b><small>{{ t.role }}</small></div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Candidature ===== -->
+<section class="section alt" id="candidature">
+  <div class="conteneur">
+    <form class="carte candidature" (submit)="envoyer($event)">
+      <p class="etiquette or centre">Appel à candidatures</p>
+      <h2 class="centre">Rejoignez la Cohorte Bénévole 2025</h2>
+      <p class="centre">Rejoignez activement notre mouvement citoyen. Remplissez ce formulaire pour être intégré aux sessions d'onboarding régionales et aux groupes d'action.</p>
+
+      <div class="deux">
+        <div class="champ"><label for="nom">Nom et prénom *</label><input id="nom" required placeholder="Ex. Diane Mballa" /></div>
+        <div class="champ"><label for="mail">Adresse email *</label><input id="mail" type="email" required placeholder="diane@exemple.com" /></div>
+        <div class="champ"><label for="tel">Numéro WhatsApp (avec indicatif) *</label><input id="tel" required placeholder="+237 6XX XX XX XX" /></div>
+        <div class="champ"><label for="ville">Ville de résidence *</label>
+          <select id="ville" required><option value="">Sélectionnez votre ville</option><option>Douala</option><option>Yaoundé</option><option>Limbé</option><option>Kinshasa</option><option>Autre</option></select>
+        </div>
+      </div>
+
+      <div class="champ">
+        <label>Pôle d'engagement prioritaire *</label>
+        <div class="grille g3 choix">
+          @for (c of choix; track c.nom) {
+            <label class="option"><input type="radio" name="pole" required /> <span><b>{{ c.nom }}</b><small>{{ c.detail }}</small></span></label>
+          }
+        </div>
+      </div>
+
+      <div class="champ"><label for="motivation">En quelques mots, qu'aimeriez-vous apporter à Young Ecolo ?</label>
+        <textarea id="motivation" placeholder="Compétences, idées d'actions pour votre quartier ou motivations personnelles..."></textarea>
+      </div>
+      <label class="charte"><input type="checkbox" required /> J'accepte de respecter la Charte Éthique de Young Ecolo et d'adhérer aux valeurs de non-violence, d'intégrité et de préservation solidaire de la nature.</label>
+      <button class="btn btn-or btn-large"><mat-icon>how_to_reg</mat-icon> Soumettre ma candidature pour 2025</button>
+      @if (envoye()) {
+        <p class="merci">Merci ! Votre candidature a bien été enregistrée.</p>
+      }
+    </form>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="conteneur faq">
+    <app-titre-section titre="Foire Aux Questions Bénévolat" soustitre="Tout ce que vous devez savoir avant de vous lancer avec nous." />
+    @for (f of questions; track f.q; let i = $index) {
+      <div class="carte question" [class.ouverte]="ouverte() === i">
+        <button type="button" (click)="basculer(i)">{{ f.q }} <mat-icon>{{ ouverte() === i ? 'expand_less' : 'expand_more' }}</mat-icon></button>
+        @if (ouverte() === i) { <p>{{ f.r }}</p> }
+      </div>
+    }
+  </div>
+</section>

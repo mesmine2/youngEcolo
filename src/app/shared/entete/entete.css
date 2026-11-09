@@ -1,0 +1,16 @@
+.entete{position:sticky;top:0;z-index:50;background:rgba(3,22,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--bord)}
+.barre{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo img{height:52px;filter:brightness(1.35) saturate(1.2)}
+nav{display:flex;align-items:center;gap:6px;font-size:.88rem}
+nav > a:not(.btn){padding:8px 14px;border-radius:8px;color:var(--doux)}
+nav > a:not(.btn):hover{color:#fff}
+nav > a.actif{background:rgba(52,226,160,.14);color:var(--vert);font-weight:600}
+.btn{padding:9px 16px;font-size:.8rem}
+.premier{margin-left:14px}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+@media(max-width:1100px){
+  .burger{display:block}
+  nav{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--fond);padding:16px 4%;border-bottom:1px solid var(--bord)}
+  nav.ouvert{display:flex}
+  .premier{margin-left:0;margin-top:8px}
+}

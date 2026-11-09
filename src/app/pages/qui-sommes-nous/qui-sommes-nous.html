@@ -1,0 +1,96 @@
+<!-- ===== En-tête ===== -->
+<section class="hero-page">
+  <div class="conteneur grille g2 histoire">
+    <div>
+      <p class="pastille"><span class="point"></span> Qui sommes-nous</p>
+      <h1>Une jeunesse engagée pour <em>l'écologie en Afrique</em></h1>
+      <p class="intro">Young Ecolo est une organisation de jeunes engagée dans la promotion du développement durable et de l'entrepreneuriat écologique. Nous sensibilisons les jeunes et les communautés à la protection de l'environnement à travers des campagnes de reboisement, le recyclage, la gestion des déchets et l'éducation environnementale.</p>
+      <p class="suite">Créé en 2023 par un groupe de jeunes engagés dirigé par Eitel MBANGO, entrepreneur et activiste écologique, Young Ecolo est un mouvement citoyen dont la mission est de promouvoir l'écologie inclusive et participative en Afrique. Nous nous positionnons aussi comme un incubateur de projets verts portés par les jeunes.</p>
+      <div class="boutons">
+        <a routerLink="/projets" class="btn btn-or">Voir nos projets</a>
+        <a routerLink="/contact" class="btn btn-sombre">Nous contacter</a>
+      </div>
+    </div>
+    <div class="photo"><img src="images/equipe.jpg" alt="L'équipe de Young Ecolo" /></div>
+  </div>
+</section>
+
+<!-- ===== Mission, vision, slogan ===== -->
+<section class="section alt">
+  <div class="conteneur grille g3">
+    <article class="carte">
+      <span class="icone-rond"><mat-icon>flag</mat-icon></span>
+      <h3>Notre mission</h3>
+      <p>Promouvoir l'écologie inclusive et participative en Afrique, avec des actions locales concrètes menées avec les écoles, les collectivités, les ONG et nos partenaires internationaux.</p>
+    </article>
+    <article class="carte">
+      <span class="icone-rond"><mat-icon>visibility</mat-icon></span>
+      <h3>Notre vision</h3>
+      <p>Bâtir une génération consciente, engagée et innovante, où les solutions technologiques sont mises au profit de la protection de la planète, pour un avenir vert, juste et inclusif.</p>
+    </article>
+    <article class="carte slogan">
+      <span class="icone-rond"><mat-icon>format_quote</mat-icon></span>
+      <h3>Notre slogan</h3>
+      <p class="citation">« Agissons ensemble pour un monde plus durable. »</p>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Valeurs ===== -->
+<section class="section">
+  <div class="conteneur">
+    <app-titre-section etiquette="Nos valeurs fondamentales" titre="Cinq repères pour bien faire en faisant le bien" soustitre="Toutes nos activités reposent sur ces valeurs, qui orientent nos décisions stratégiques." />
+    <div class="grille g5">
+      @for (v of valeurs; track v.titre) {
+        <article class="carte valeur">
+          <span class="icone-rond"><mat-icon>{{ v.icone }}</mat-icon></span>
+          <h3>{{ v.titre }}</h3>
+          <p>{{ v.texte }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Objectifs ===== -->
+<section class="section alt">
+  <div class="conteneur">
+    <app-titre-section etiquette="Nos objectifs" titre="Ce que nous voulons accomplir" [centre]="false" />
+    <div class="grille g2">
+      @for (o of objectifs; track o) {
+        <div class="carte objectif"><mat-icon>check_circle</mat-icon><p>{{ o }}</p></div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Équipe ===== -->
+<section class="section">
+  <div class="conteneur">
+    <app-titre-section etiquette="Notre équipe" titre="Une équipe multidisciplinaire répartie dans plus de trois pays" soustitre="Nous développons des outils innovants pour accompagner l'adoption de technologies qui réduisent l'impact sur l'environnement." />
+    <div class="grille g5">
+      @for (m of equipe; track m.nom) {
+        <article class="carte membre">
+          <span class="avatar">{{ initiales(m.nom) }}</span>
+          <h3>{{ m.nom }}</h3>
+          <p>{{ m.role }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== Partenaires ===== -->
+<section class="section alt">
+  <div class="conteneur">
+    <app-titre-section etiquette="Nos partenaires" titre="Des alliances nationales et internationales" soustitre="Pour concrétiser et valoriser nos initiatives, nous construisons des partenariats stratégiques et financiers solides." />
+    @for (g of partenaires; track g.type) {
+      <div class="groupe">
+        <h3>{{ g.type }}</h3>
+        <div class="noms">
+          @for (n of g.noms; track n) { <span>{{ n }}</span> }
+        </div>
+      </div>
+    }
+  </div>
+</section>

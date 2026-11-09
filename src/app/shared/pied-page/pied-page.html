@@ -1,0 +1,50 @@
+<footer class="pied">
+  <div class="conteneur haut">
+    <div class="marque">
+      <img src="images/logo.png" alt="Young Ecolo" />
+      <p>Young Ecolo est une organisation engagée pour la protection de l'environnement, l'éducation écologique et la mobilisation des jeunes en faveur du développement durable au Cameroun et en Afrique centrale.</p>
+      <div class="reseaux">
+        <a href="https://www.youngecolo.com" target="_blank" aria-label="Site web"><mat-icon>public</mat-icon></a>
+        <a href="https://www.linkedin.com/company/young-ecolo/" target="_blank" aria-label="LinkedIn"><mat-icon>share</mat-icon></a>
+        <a href="https://whatsapp.com/channel/0029VbAWu70G3R3evVpGba3l" target="_blank" aria-label="WhatsApp"><mat-icon>chat</mat-icon></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Explorer</h4>
+      <a routerLink="/">Accueil</a>
+      <a routerLink="/qui-sommes-nous">Qui sommes-nous</a>
+      <a routerLink="/domaines">Domaines</a>
+      <a routerLink="/projets">Projets</a>
+      <a routerLink="/" fragment="partenaires">Partenaires</a>
+    </div>
+
+    <div>
+      <h4>S'engager</h4>
+      <a routerLink="/" fragment="don">Faire un don</a>
+      <a routerLink="/communaute" fragment="candidature">Bénévolat</a>
+      <a routerLink="/projets" fragment="ecosolar">EcoSolar</a>
+      <a routerLink="/projets" fragment="wasteconnect">WasteConnect</a>
+      <a routerLink="/communaute">Réseau Jeunes</a>
+    </div>
+
+    <div class="newsletter">
+      <h4>Newsletter Climat &amp; Jeunesse</h4>
+      <p>Recevez nos actualités, nos projets écologiques et les opportunités d'engagement de Young Ecolo.</p>
+      <form (submit)="$event.preventDefault()">
+        <input type="email" placeholder="Votre adresse email..." aria-label="Adresse email" />
+        <button class="btn btn-vert">S'inscrire</button>
+      </form>
+      <ul class="infos">
+        <li><mat-icon>place</mat-icon> Akwa, derrière Collège De La Salle, Douala, Cameroun</li>
+        <li><mat-icon>call</mat-icon> +237 694 57 90 03 / +237 650 73 53 65</li>
+        <li><mat-icon>mail</mat-icon> info&#64;youngecolo.com</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conteneur bas">
+    <span>© {{ annee }} Young Ecolo ONG. Tous droits réservés.</span>
+    <span class="legal"><a href="#">Mentions légales</a><a href="#">Politique de confidentialité</a><a href="#">Statuts &amp; Gouvernance</a></span>
+  </div>
+</footer>

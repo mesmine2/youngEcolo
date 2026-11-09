@@ -1,0 +1,3 @@
+Copier "public" et "src" dans le projet Angular (accepter de remplacer les fichiers existants).
+Installer les icônes : npm install @angular/material @angular/cdk
+Lancer : ng serve

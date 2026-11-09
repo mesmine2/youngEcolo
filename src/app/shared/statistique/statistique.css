@@ -1,0 +1,5 @@
+.stat{height:100%;padding:20px}
+strong{display:block;font:700 2.6rem/1.1 'Outfit',sans-serif;color:var(--vert)}
+strong.or{color:var(--or)}
+.libelle{display:block;margin-top:8px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--doux);font-weight:500}
+small{display:block;margin-top:6px;font-size:.8rem;color:var(--doux)}
